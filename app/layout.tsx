@@ -1,4 +1,4 @@
-import type {Metadata} from 'next';
+import type {Metadata, Viewport} from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css'; // Global styles
 
@@ -14,6 +14,12 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
+export const viewport: Viewport = {
+  themeColor: '#0A1B3F',
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: 'Under The Sun Marine | Mobile Boat Mechanic South Florida',
   description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics across South Florida. No yard delays—we come straight to your dock.',
@@ -22,11 +28,29 @@ export const metadata: Metadata = {
     description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics across South Florida.',
     url: 'https://underthesunmarine.com',
     siteName: 'Under The Sun Marine',
+    images: [
+      {
+        url: '/logo-1.png',
+        width: 1200,
+        height: 630,
+        alt: 'Under The Sun Marine Logo',
+      }
+    ],
     locale: 'en_US',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Under The Sun Marine | Mobile Boat Mechanic South Florida',
+    description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics across South Florida.',
+    images: ['/logo-1.png'],
+  },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/logo-1.png', type: 'image/png', sizes: '32x32' }
+    ],
+    apple: '/logo-1.png',
   },
 };
 
