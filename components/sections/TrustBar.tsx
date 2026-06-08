@@ -5,47 +5,33 @@ import { Clock, DollarSign, Award, Truck } from 'lucide-react';
 
 export default function TrustBar() {
   const items = [
-    {
-      icon: Clock,
-      label: 'Fast Response',
-    },
-    {
-      icon: DollarSign,
-      label: 'Honest Pricing',
-    },
-    {
-      icon: Award,
-      label: 'All Major Brands',
-    },
-    {
-      icon: Truck,
-      label: 'Fully Mobile',
-    },
+    { icon: Clock, label: 'Fast Response' },
+    { icon: DollarSign, label: 'Honest Pricing' },
+    { icon: Award, label: 'All Brands' },
+    { icon: Truck, label: 'Fully Mobile' },
   ];
 
   return (
     <section 
       id="trust-bar" 
-      className="relative bg-gradient-to-r from-[#07132c] via-marine-navy to-[#07132c] text-white py-4 sm:py-5 border-t-2 border-b-2 border-slate-200/80 shadow-md overflow-hidden z-10"
+      className="hidden md:flex relative bg-gradient-to-r from-marine-navy via-marine-navy-light to-marine-navy text-white lg:h-16 border-t border-b border-surface-blue/60 shadow-xs overflow-hidden z-10 items-center"
     >
-      {/* Subtle blueprint pattern overlay */}
-      <div className="absolute inset-0 bg-marine-grid opacity-[0.06] pointer-events-none" />
+      {/* Blueprint grid accent pattern */}
+      <div className="absolute inset-0 bg-marine-grid opacity-[0.04] pointer-events-none" />
       
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-4 md:gap-y-0 items-center justify-center text-center">
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
+        <div className="grid grid-cols-4 items-center justify-center text-center">
           {items.map((item, index) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.label}
-                className={`flex items-center justify-center gap-2.5 px-4 py-1.5 ${
-                  index !== 0 ? 'md:border-l border-white/10' : ''
+                className={`flex items-center justify-center gap-3 px-4 ${
+                  index !== 0 ? 'border-l border-white/10' : ''
                 }`}
               >
-                <div className="p-1 rounded-lg bg-white/5 border border-white/10 text-sun-orange shrink-0">
-                  <Icon className="h-4.5 w-4.5" />
-                </div>
-                <span className="font-sans font-semibold text-xs sm:text-sm tracking-wide text-slate-100">
+                <Icon className="h-4.5 w-4.5 text-sun-orange shrink-0" />
+                <span className="font-sans font-bold text-xs lg:text-sm tracking-wide text-slate-200">
                   {item.label}
                 </span>
               </div>

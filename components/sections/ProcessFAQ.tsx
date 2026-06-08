@@ -2,18 +2,18 @@
 
 import React, { useState } from 'react';
 import { Phone, MapPin, Check, ChevronDown, HelpCircle } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 
 const steps = [
   {
     icon: Phone,
     title: 'Reach Out',
-    description: 'Give us a call or send a quick text. We will chat about your boat and find a convenient time.',
+    description: 'Give me a call or send a quick text. I will chat about your boat and find a convenient time.',
   },
   {
     icon: MapPin,
-    title: 'We Come to You',
-    description: 'No trailer or towing needed. We handle all diagnostics and service right at your slip, dock, or home driveway.',
+    title: 'I Come to You',
+    description: 'No trailer or towing needed. I handle all diagnostics and service right at your slip, dock, or home driveway.',
   },
   {
     icon: Check,
@@ -26,25 +26,33 @@ const faqs = [
   {
     id: 'travel-fee',
     question: 'Do you charge a travel fee?',
-    answer: 'Standard travel is fully included within our primary South Florida service zones. If your boat is located outside that window, we will always let you know upfront before heading over.',
+    answer: 'Standard travel is fully included within my primary South Florida service zones. If your boat is located outside that window, I will always let you know upfront before heading over.',
   },
   {
     id: 'requirements',
-    question: 'What do you need from us on service day?',
-    answer: 'Just access to the vessel and the keys! You do not even have to wait around if you are busy. We will keep you fully updated with detailed text reports and photos as we progress.',
+    question: 'What do you need from me on service day?',
+    answer: 'Just access to the vessel and the keys! You do not even have to wait around if you are busy. I will keep you fully updated with detailed text reports and photos as I progress.',
   },
   {
     id: 'in-water',
     question: 'Do you work on boats while they are in the water?',
-    answer: 'Yes, absolutely! There is no need to pay for expensive haul-outs or towing. We can complete almost all diagnostic, engine servicing, electrical, and plumbing repairs right while your vessel sits comfortably in its slip or on your lift.',
+    answer: 'Yes, absolutely! There is no need to pay for expensive haul-outs or towing. I can complete almost all diagnostic, engine servicing, electrical, and plumbing repairs right while your vessel sits comfortably in its slip or on your lift.',
   },
 ];
 
 export default function ProcessFAQ() {
   const [openId, setOpenId] = useState<string | null>('travel-fee');
+  const [isMounted, setIsMounted] = React.useState(false);
+  React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsMounted(true);
+  }, []);
+
+  const shouldReduceMotionRaw = useReducedMotion();
+  const shouldReduceMotion = isMounted ? shouldReduceMotionRaw : false;
 
   return (
-    <section id="process" className="bg-surface-offwhite py-24 scroll-mt-20 border-y border-slate-100">
+    <section id="process" className="bg-surface-offwhite py-24 scroll-mt-20 border-y border-surface-blue">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -59,13 +67,13 @@ export default function ProcessFAQ() {
             </h2>
 
             {/* Steps stacked */}
-            <div className="space-y-6 md:space-y-10 relative before:hidden md:before:absolute before:left-6 before:top-4 before:bottom-4 before:w-0.5 before:bg-slate-200">
+            <div className="space-y-6 md:space-y-10 relative before:hidden md:before:absolute before:left-6 before:top-4 before:bottom-4 before:w-0.5 before:bg-surface-blue">
               {steps.map((step, idx) => {
                 const IconComponent = step.icon;
                 return (
                   <div
                     key={idx}
-                    className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4 md:gap-5 p-6 md:p-0 bg-white md:bg-transparent rounded-2xl border border-slate-100 md:border-none shadow-sm md:shadow-none relative group transition-all duration-200"
+                    className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4 md:gap-5 p-6 md:p-0 bg-white md:bg-transparent rounded-2xl border border-surface-blue md:border-none shadow-sm md:shadow-none relative group transition-all duration-200"
                   >
                     {/* Badge / Step layout */}
                     <div className="flex flex-col md:flex-row items-center gap-2.5 shrink-0">
@@ -75,7 +83,7 @@ export default function ProcessFAQ() {
                       </span>
                       
                       {/* Graphic Icon Trigger */}
-                      <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-marine-navy text-white shadow-md z-10 group-hover:bg-sun-orange transition-colors duration-300">
+                      <div className="flex h-12 w-12 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-marine-navy text-white shadow-md z-10 group-hover:bg-sun-orange transition-colors duration-300">
                         <IconComponent className="h-5 w-5 text-sun-orange group-hover:text-white transition-colors" />
                       </div>
                     </div>
@@ -108,13 +116,13 @@ export default function ProcessFAQ() {
             </h2>
 
             {/* Accordion List Container */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 space-y-4">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-surface-blue space-y-4">
               {faqs.map((faq) => {
                 const isOpen = openId === faq.id;
                 return (
                   <div
                     key={faq.id}
-                    className="border-b border-slate-100 last:border-none pb-4 last:pb-0"
+                    className="border-b border-surface-blue last:border-none pb-4 last:pb-0"
                   >
                     <button
                       onClick={() => setOpenId(isOpen ? null : faq.id)}
@@ -134,10 +142,10 @@ export default function ProcessFAQ() {
                     <AnimatePresence initial={false}>
                       {isOpen && (
                         <motion.div
-                          initial={{ height: 0, opacity: 0 }}
+                          initial={shouldReduceMotion ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
                           animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
+                          exit={shouldReduceMotion ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+                          transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
                           className="overflow-hidden"
                         >
                           <p className="pb-3 text-sm text-text-muted leading-relaxed pl-7">

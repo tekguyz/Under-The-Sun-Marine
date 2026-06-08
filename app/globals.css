@@ -22,7 +22,8 @@
     background-color: var(--color-surface-white);
     color: var(--color-text-main);
     font-family: var(--font-sans);
-    antialiased: true;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 }

@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Under The Sun Marine | Mobile Boat Mechanic South Florida',
     description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics across South Florida.',
-    url: 'https://underthesunmarine.com',
+    url: 'https://underthesunmarine.vercel.app/',
     siteName: 'Under The Sun Marine',
     images: [
       {
-        url: '/logo-1.png',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Under The Sun Marine Logo',
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Under The Sun Marine | Mobile Boat Mechanic South Florida',
     description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics across South Florida.',
-    images: ['/logo-1.png'],
+    images: ['/logo.png'],
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/logo-1.png', type: 'image/png', sizes: '32x32' }
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/logo.png', type: 'image/png', sizes: '32x32' }
     ],
-    apple: '/logo-1.png',
+    apple: '/logo.png',
   },
 };
 
@@ -59,7 +59,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Under The Sun Marine",
-    "image": "https://underthesunmarine.com/logo.png",
+    "image": "https://underthesunmarine.vercel.app/logo.png",
     "telephone": "+1-561-560-5050",
     "email": "Utsboatrepair@gmail.com",
     "address": {
