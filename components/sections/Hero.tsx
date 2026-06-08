@@ -9,24 +9,24 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full bg-surface-offwhite bg-marine-grid bg-radial-glow overflow-hidden pt-20 pb-5 sm:pt-24 sm:pb-10 md:pt-28 md:pb-16 lg:pt-0 lg:pb-0 lg:h-[calc(100vh-64px)] lg:min-h-[700px] xl:min-h-[810px] flex items-center z-10"
+      className="relative w-full bg-surface-offwhite bg-marine-grid bg-radial-glow overflow-hidden h-dvh flex items-center z-10 pt-16 sm:pt-20 lg:pt-0"
     >
       {/* Decorative Floating Background Shapes for Premium Depth */}
       <div className="absolute top-20 right-[-10%] w-[500px] h-[500px] rounded-full bg-sky-200/20 blur-3xl -z-10 pointer-events-none" />
       <div className="absolute bottom-10 left-[-5%] w-[400px] h-[400px] rounded-full bg-orange-100/30 blur-3xl -z-10 pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-16 items-center">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-16 items-center w-full">
           
           {/* Left Column (Content & Action Zone) - Cols 1-7 */}
-          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left w-full z-10">
+          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left w-full z-10 justify-center">
             
             {/* Approachable Status & Location Indicator */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs sm:text-sm font-semibold text-marine-navy border border-slate-200 shadow-sm"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-marine-navy border border-slate-200 shadow-sm"
             >
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sun-orange opacity-75"></span>
@@ -41,7 +41,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-heading font-black text-marine-navy text-[32px] xs:text-4xl sm:text-6xl md:text-7xl lg:text-[54px] xl:text-[76px] lg:leading-[1.08] xl:leading-[1.02] tracking-tight mt-5"
+              className="font-heading font-black text-marine-navy text-[30px] xs:text-3xl sm:text-5xl md:text-6xl lg:text-[44px] xl:text-[58px] leading-[1.15] lg:leading-[1.1] tracking-tight mt-3 sm:mt-5"
             >
               Mobile Boat Repair <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sun-orange to-sun-orange-light">
@@ -54,7 +54,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl text-slate-600 max-w-2xl lg:max-w-3xl font-normal leading-relaxed"
+              className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-slate-600 max-w-xl sm:max-w-2xl lg:max-w-xl xl:max-w-2xl font-normal leading-relaxed"
             >
               Skip the shipyard wait. We bring master engine diagnostics, routine services, and marine electrical care directly to your dock or driveway.
             </motion.p>
@@ -64,20 +64,20 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 w-full sm:w-auto"
+              className="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-2.5 sm:gap-3 w-full sm:w-auto"
             >
               <a
                 href="sms:+15615605050;?&body=Hi%20Under%20The%20Sun%20Marine%2C%20I%20need%20some%20help%20with%20my%20boat."
-                className="flex items-center justify-center gap-2 bg-sun-orange text-white text-base font-bold rounded-xl px-8 py-3.5 sm:px-10 sm:py-4 lg:text-lg shadow-lg shadow-sun-orange/20 hover:bg-sun-orange-light hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                className="flex items-center justify-center gap-2 bg-sun-orange text-white text-sm sm:text-base font-bold rounded-xl px-6 py-3 sm:px-10 sm:py-4 shadow-lg shadow-sun-orange/20 hover:bg-sun-orange-light hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
-                <MessageSquare className="h-5 w-5 shrink-0" />
+                <MessageSquare className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
                 <span>Text Us for a Quote</span>
               </a>
               <a
                 href="tel:+15615605050"
-                className="flex items-center justify-center gap-2 bg-white text-marine-navy border border-slate-200 rounded-xl px-8 py-3.5 sm:px-10 sm:py-4 lg:text-lg text-base font-semibold shadow-sm hover:bg-slate-50 hover:border-slate-300 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                className="flex items-center justify-center gap-2 bg-white text-marine-navy border border-slate-200 rounded-xl px-6 py-3 sm:px-10 sm:py-4 text-sm sm:text-base font-semibold shadow-sm hover:bg-slate-50 hover:border-slate-300 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
-                <Phone className="h-5 w-5 text-sun-orange shrink-0" />
+                <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-sun-orange shrink-0" />
                 <span>Call (561) 560-5050</span>
               </a>
             </motion.div>
@@ -87,7 +87,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-3 text-xs text-slate-500 text-center lg:text-left pl-1"
+              className="mt-3 sm:mt-4 text-xs sm:text-sm text-slate-500 text-center lg:text-left pl-1"
             >
               Prefer writing? Schedule online using our{' '}
               <a href="#contact" className="text-marine-navy font-bold underline hover:text-sun-orange transition-colors">
@@ -96,35 +96,35 @@ export default function Hero() {
               below.
             </motion.p>
 
-            {/* Horizontal Trust Badges Matrix - Overflow-scrolling on Mobile, wrap on Desktop */}
+            {/* Horizontal Trust Badges Matrix - Hidden on mobile to avoid badge overload */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-6 pt-5 border-t border-slate-200/80 w-full flex flex-row overflow-x-auto pb-2 scrollbar-none snap-x snap-mandatory flex-nowrap justify-start lg:justify-start lg:flex-wrap lg:overflow-visible gap-2.5 text-xs md:text-sm font-medium text-slate-500 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              className="hidden md:flex mt-6 pt-5 border-t border-slate-200/80 w-full flex-wrap gap-3 text-xs md:text-sm font-medium text-slate-500"
             >
-              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm py-1.5 px-3 rounded-lg border border-slate-100 shadow-2xs snap-center shrink-0 min-w-max">
+              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm py-1.5 px-3 rounded-lg border border-slate-100 shadow-2xs">
                 <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
                 <span>Licensed & Fully Insured</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm py-1.5 px-3 rounded-lg border border-slate-100 shadow-2xs snap-center shrink-0 min-w-max">
+              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm py-1.5 px-3 rounded-lg border border-slate-100 shadow-2xs">
                 <Award className="h-4 w-4 text-emerald-600 shrink-0" />
                 <span>OEM Diagnostics Support</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm py-1.5 px-3 rounded-lg border border-slate-100 shadow-2xs snap-center shrink-0 min-w-max">
+              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm py-1.5 px-3 rounded-lg border border-slate-100 shadow-2xs">
                 <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
                 <span>Zero Marine Yard Markup</span>
               </div>
             </motion.div>
           </div>
 
-          {/* Right Column (The Visual Collage Canvas) - Cols 8-12 (Hidden on Mobile/Tablet for optimized above-the-fold load) */}
-          <div className="hidden lg:flex lg:col-span-5 w-full relative items-center justify-center lg:px-0">
+          {/* Right Column (The Visual Collage Canvas) - Cols 8-12 */}
+          <div className="hidden lg:flex lg:col-span-5 w-full relative items-center justify-center lg:px-0 h-full py-6">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-full max-w-md lg:max-w-none relative lg:aspect-[4/5] xl:aspect-[16/19]"
+              className="w-full max-w-md lg:max-w-none relative lg:aspect-[4/5] xl:aspect-[13/15]"
             >
               {/* Main Structural Frame Layer */}
               <div className="w-full h-full relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-slate-100 group">
@@ -136,16 +136,15 @@ export default function Hero() {
                   sizes="(max-w: 1024px) 100vw, 45vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-103"
                 />
-                {/* Clean Ambient Lighting Layer Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-marine-navy/30 via-transparent to-transparent mix-blend-multiply" />
               </div>
 
-              {/* Overlapping Secondary Asset: Floating Real-Time Operational Tracker Card */}
+              {/* Overlapping Secondary Asset */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="absolute bottom-4 right-4 sm:-bottom-6 sm:-left-6 lg:bottom-8 lg:-left-10 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-slate-100 max-w-[260px] sm:max-w-xs z-20 group hover:-translate-y-1 transition-transform duration-300"
+                className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-slate-100 max-w-[260px] z-20 group hover:-translate-y-1 transition-transform duration-300"
               >
                 <div className="flex items-start gap-3">
                   <div className="p-2 rounded-lg bg-surface-blue text-marine-navy">
@@ -167,17 +166,17 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Animated Down Arrow Indicator for Scroll Guide to Below-the-Fold */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex-col items-center gap-1.5 z-20 pointer-events-none hidden lg:flex">
-        <span className="text-[10px] font-bold uppercase tracking-widest text-[#0A1B3F]/50 animate-pulse font-sans">
+      {/* Animated Down Arrow Indicator for Scroll Guide */}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-20 pointer-events-none">
+        <span className="hidden md:block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#0A1B3F]/50 animate-pulse font-sans">
           Explore Services
         </span>
         <motion.div
-          animate={{ y: [0, 6, 0] }}
+          animate={{ y: [0, 4, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
         >
           <svg
-            className="h-4.5 w-4.5 text-sun-orange"
+            className="h-4.5 w-4.5 text-sun-orange sm:h-5 sm:w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

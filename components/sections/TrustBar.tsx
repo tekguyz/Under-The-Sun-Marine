@@ -24,12 +24,15 @@ export default function TrustBar() {
   ];
 
   return (
-    <section id="trust-bar" className="relative bg-gradient-to-r from-[#07132c] via-marine-navy to-[#07132c] text-white py-3.5 sm:py-4 border-t-2 border-b-2 border-slate-200/80 shadow-md overflow-hidden z-10">
+    <section 
+      id="trust-bar" 
+      className="relative bg-gradient-to-r from-[#07132c] via-marine-navy to-[#07132c] text-white py-4 sm:py-5 border-t-2 border-b-2 border-slate-200/80 shadow-md overflow-hidden z-10"
+    >
       {/* Subtle blueprint pattern overlay */}
       <div className="absolute inset-0 bg-marine-grid opacity-[0.06] pointer-events-none" />
       
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-3.5 md:gap-y-0 items-center justify-center text-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-4 md:gap-y-0 items-center justify-center text-center">
           {items.map((item, index) => {
             const Icon = item.icon;
             return (
