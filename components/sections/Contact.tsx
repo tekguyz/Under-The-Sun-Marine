@@ -8,9 +8,23 @@ import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { Phone, CheckCircle2, AlertCircle, ShieldCheck } from 'lucide-react';
 import { submitContactForm } from '@/actions/contact';
 
+function formatPhoneNumber(value: string): string {
+  if (!value) return value;
+  const phoneNumber = value.replace(/[^\d]/g, '').slice(0, 10);
+  const phoneNumberLength = phoneNumber.length;
+  if (phoneNumberLength < 4) return phoneNumber;
+  if (phoneNumberLength < 7) {
+    return `(${phoneNumber.slice(0, 3)})${phoneNumber.slice(3)}`;
+  }
+  return `(${phoneNumber.slice(0, 3)})${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6)}`;
+}
+
 const contactSchema = z.object({
   name: z.string().min(2, { message: 'Please tell me your name.' }),
-  phone: z.string().min(10, { message: 'Please enter a 10-digit phone number.' }),
+  phone: z.string().refine((val) => {
+    const cleanNum = val.replace(/\D/g, '');
+    return cleanNum.length === 10;
+  }, { message: 'Please enter a valid 10-digit phone number.' }),
   serviceNeed: z.enum(['Mechanical & Engine Care', 'Electrical & Electronics', 'Detailing & Protection']),
   boatModel: z.string().min(2, { message: 'Engine make & boat model helps me prepare.' }),
   message: z.string().min(5, { message: 'Please provide a brief description of the issue.' }),
@@ -60,7 +74,7 @@ export default function Contact() {
         if (result.success) {
           setSubmitResult({ 
             success: true, 
-            message: `Thank you, ${data.name}! Your request for ${data.serviceNeed} has been securely logged in my South Florida dockside dispatch queue. I am reviewing your boat profile (${data.boatModel}) right now. I will text or call you at ${data.phone} shortly to coordinate your on-site visit.` 
+            message: `Thanks ${data.name}! I received your request for ${data.serviceNeed} on your ${data.boatModel}. I'm reviewing the details now and will text or call you at ${data.phone} shortly to coordinate a visit to your dock.` 
           });
           reset();
         } else {
@@ -178,8 +192,12 @@ export default function Contact() {
                         <input
                           type="tel"
                           id="phone"
-                          {...register('phone')}
-                          placeholder="(561) 555-0199"
+                          {...register('phone', {
+                            onChange: (e) => {
+                              e.target.value = formatPhoneNumber(e.target.value);
+                            }
+                          })}
+                          placeholder="(561)555-0199"
                           className="w-full min-h-[48px] bg-surface-offwhite border border-surface-blue focus:border-sun-orange focus:ring-1 focus:ring-sun-orange focus:outline-none rounded-xl px-4 py-3 text-base md:text-sm text-text-main placeholder:text-base md:placeholder:text-sm placeholder:text-text-muted/50 transition-all font-sans"
                         />
                         {errors.phone && (

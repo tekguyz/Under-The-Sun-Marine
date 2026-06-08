@@ -29,7 +29,7 @@ export default function Footer() {
               />
             </a>
             <p className="text-sm text-text-muted max-w-xs leading-relaxed font-sans mt-1">
-              I am committed to providing South Florida boaters with premium, hassle-free, dockside expertise. I bring the workshop right to your vessel&apos;s slip or driveway, saving you from long shipyard wait times.
+              Reliable, master-tier dockside boat repair and routine maintenance across South Florida. Skip the frustrating boatyard backlog—I bring the entire workshop directly to your slip.
             </p>
           </div>
 

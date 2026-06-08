@@ -73,7 +73,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${inter.variable} ${poppins.variable} bg-surface-offwhite`}>
       <body suppressHydrationWarning className="bg-surface-white text-text-main font-sans">
         <script
           type="application/ld+json"

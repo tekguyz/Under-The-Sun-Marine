@@ -8,6 +8,7 @@ import { Phone, Anchor, CheckCircle2, ShieldCheck, Award, MessageSquare } from '
 export default function Hero() {
   const [isMounted, setIsMounted] = React.useState(false);
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMounted(true);
     if (typeof window !== 'undefined') {
       if (window.location.hash) {
@@ -71,7 +72,7 @@ export default function Hero() {
               {...animatedProps(0.1)}
               className="mt-4 text-base sm:text-base md:text-lg text-text-muted max-w-xl sm:max-w-2xl lg:max-w-xl xl:max-w-2xl font-semibold leading-relaxed font-sans"
             >
-              Don't waste your time waiting on a backed-up boatyard. I come directly to your dock to handle engine troubleshooting, regular maintenance, and electrical fixes. No towing, no yard markups, just honest work.
+              Don&apos;t waste your time waiting on a backed-up boatyard. I come directly to your dock to handle engine troubleshooting, regular maintenance, and electrical fixes. No towing, no yard markups, just honest work.
             </motion.p>
 
             {/* High-Contrast Conversion Buttons */}
