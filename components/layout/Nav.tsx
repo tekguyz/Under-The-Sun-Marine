@@ -35,7 +35,7 @@ export default function Nav() {
         <a href="#" className="flex items-center group" aria-label="Under The Sun Marine">
           <div className="relative h-14 sm:h-16 md:h-18 lg:h-20 w-[200px] sm:w-[220px] md:w-[250px] lg:w-[270px] transition-transform duration-300 group-hover:scale-[1.01]">
             <Image
-              src="/logo.png"
+              src="/logo-trans.png"
               alt="Under The Sun Marine Logo"
               fill
               priority
@@ -72,12 +72,12 @@ export default function Nav() {
             <span>Call Jack</span>
           </a>
           <a
-            href="sms:+15615605050;?&body=Hi Jack, I need some help with my boat."
-            id="nav-cta-text"
+            href="#contact"
+            id="nav-cta-contact"
             className="inline-flex items-center gap-2 rounded-full bg-sun-orange hover:bg-sun-orange-light text-white px-4 py-2 font-semibold text-xs lg:text-sm shadow-sm transition-all hover:scale-[1.02] active:scale-95"
           >
             <MessageSquare className="h-3.5 w-3.5" />
-            <span>Text Me</span>
+            <span>Request Service</span>
           </a>
         </div>
 
@@ -102,20 +102,27 @@ export default function Nav() {
             <a href="#contact" className="font-heading font-semibold text-base text-marine-navy hover:text-sun-orange py-2 border-b border-surface-blue/60" onClick={() => setIsOpen(false)}>Contact</a>
             <div className="flex flex-col gap-2.5 mt-4">
               <a
-                href="sms:+15615605050;?&body=Hi Jack, I need some help with my boat."
+                href="#contact"
                 className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-sun-orange hover:bg-sun-orange-light text-white px-5 py-3 font-semibold text-sm shadow-sm transition-all"
                 onClick={() => setIsOpen(false)}
               >
                 <MessageSquare className="h-4 w-4" />
-                <span>Text Jack (561) 560-5050</span>
+                <span>Request Service Form</span>
               </a>
               <a
                 href="tel:+15615605050"
-                className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-surface-offwhite border border-surface-blue text-marine-navy px-5 py-3 font-semibold text-sm shadow-2xs transition-all"
+                className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-white border border-surface-blue text-marine-navy px-5 py-3 font-semibold text-sm shadow-2xs transition-all"
                 onClick={() => setIsOpen(false)}
               >
                 <Phone className="h-4 w-4 text-sun-orange" />
-                <span>Call Jack (561) 560-5050</span>
+                <span>Call Jack: (561) 560-5050</span>
+              </a>
+              <a
+                href="sms:+15615605050;?&body=Hi Jack, I need some help with my boat."
+                className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-surface-offwhite border border-surface-blue/60 text-text-muted px-5 py-2.5 font-semibold text-xs transition-all"
+                onClick={() => setIsOpen(false)}
+              >
+                <span>Or Text Me: (561) 560-5050</span>
               </a>
             </div>
           </nav>

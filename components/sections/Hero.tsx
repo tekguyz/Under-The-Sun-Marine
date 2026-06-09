@@ -81,18 +81,18 @@ export default function Hero() {
               className="mt-6 w-full sm:w-auto flex flex-col sm:flex-row gap-3"
             >
               <a
-                href="sms:+15615605050;?&body=Hi Jack, I need some help with my boat."
+                href="#contact"
                 className="flex items-center justify-center gap-2.5 bg-sun-orange text-white text-base font-extrabold rounded-xl px-6 py-4 sm:px-10 shadow-lg shadow-sun-orange/25 hover:bg-sun-orange-light hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
                 <MessageSquare className="h-5 w-5 shrink-0" />
-                <span>Text Me for a Quote</span>
+                <span>Request Dockside Service</span>
               </a>
               <a
                 href="tel:+15615605050"
                 className="flex items-center justify-center gap-2.5 bg-white text-marine-navy border border-surface-blue rounded-xl px-6 py-4 sm:px-10 text-base font-extrabold shadow-sm hover:bg-surface-offwhite hover:border-surface-blue hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
                 <Phone className="h-5 w-5 text-sun-orange shrink-0" />
-                <span>Call Jack (561) 560-5050</span>
+                <span>Call Jack: (561) 560-5050</span>
               </a>
             </motion.div>
 
@@ -104,11 +104,14 @@ export default function Hero() {
                 transition={transition(0.2)}
                 className="mt-4 text-xs sm:text-sm text-text-muted text-center lg:text-left font-bold tracking-wide"
               >
-                Prefer writing? Use the{' '}
-                <a href="#contact" className="text-marine-navy font-black underline hover:text-sun-orange transition-colors">
-                  Dockside Request Form
-                </a>
-                .
+                On the move?{' '}
+                <a 
+                  href="sms:+15615605050;?&body=Hi Jack, I need some help with my boat." 
+                  className="text-marine-navy font-black underline hover:text-sun-orange transition-colors"
+                >
+                  Text Jack directly
+                </a>{' '}
+                for instant dockside dispatch.
               </motion.p>
             </div>
 

@@ -19,7 +19,7 @@ export default function Footer() {
               className="relative cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
             >
               <Image
-                src="/logo.png"
+                src="/logo-trans.png"
                 alt="Under The Sun Marine Logo"
                 width={300}
                 height={80}
