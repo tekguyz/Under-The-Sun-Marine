@@ -51,6 +51,9 @@ export default function Nav() {
           <a href="#services" className="font-heading font-semibold text-base tracking-wide text-marine-navy hover:text-sun-orange transition-colors">
             Services
           </a>
+          <a href="#work" className="font-heading font-semibold text-base tracking-wide text-marine-navy hover:text-sun-orange transition-colors">
+            Work
+          </a>
           <a href="#process" className="font-heading font-semibold text-base tracking-wide text-marine-navy hover:text-sun-orange transition-colors">
             Process
           </a>
@@ -97,6 +100,7 @@ export default function Nav() {
         <div className="md:hidden border-b border-surface-blue bg-surface-offwhite/95 backdrop-blur-md px-6 py-5 shadow-inner">
           <nav className="flex flex-col gap-3 text-center">
             <a href="#services" className="font-heading font-semibold text-base text-marine-navy hover:text-sun-orange py-2 border-b border-surface-blue/60" onClick={() => setIsOpen(false)}>Services</a>
+            <a href="#work" className="font-heading font-semibold text-base text-marine-navy hover:text-sun-orange py-2 border-b border-surface-blue/60" onClick={() => setIsOpen(false)}>Work</a>
             <a href="#process" className="font-heading font-semibold text-base text-marine-navy hover:text-sun-orange py-2 border-b border-surface-blue/60" onClick={() => setIsOpen(false)}>Process</a>
             <a href="#about" className="font-heading font-semibold text-base text-marine-navy hover:text-sun-orange py-2 border-b border-surface-blue/60" onClick={() => setIsOpen(false)}>About</a>
             <a href="#contact" className="font-heading font-semibold text-base text-marine-navy hover:text-sun-orange py-2 border-b border-surface-blue/60" onClick={() => setIsOpen(false)}>Contact</a>

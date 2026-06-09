@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import TrustBar from '@/components/sections/TrustBar';
 import Services from '@/components/sections/Services';
+import Work from '@/components/sections/Work';
 import ProcessFAQ from '@/components/sections/ProcessFAQ';
 import About from '@/components/sections/About';
 import Contact from '@/components/sections/Contact';
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <TrustBar />
         <Services />
+        <Work />
         <ProcessFAQ />
         <About />
         <Contact />

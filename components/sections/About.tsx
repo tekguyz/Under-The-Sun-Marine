@@ -10,17 +10,17 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 font-sans">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
-          {/* Left Col (Image/Logo display in aspect-square container with border & shadow) - Reverted as requested */}
+          {/* Left Col (Image display in aspect-square container with border & shadow) */}
           <div className="relative flex justify-center items-center">
             <div className="absolute inset-0 bg-gradient-to-tr from-sun-orange/10 to-marine-navy/5 rounded-3xl -rotate-2 scale-[1.02] -z-10" />
-            <div className="bg-surface-blue rounded-3xl aspect-square w-full max-w-md flex items-center justify-center border-4 border-white shadow-lg p-10 relative overflow-hidden">
+            <div className="bg-surface-blue rounded-3xl aspect-square w-full max-w-md flex items-center justify-center border-4 border-white shadow-lg relative overflow-hidden">
               <div className="relative w-full h-full">
                 <Image
-                  src="/logo-trans.png"
-                  alt="Under The Sun Marine Logo Seal"
+                  src="/work/team.jpg"
+                  alt="Meet Jack - Owner and Expert Mechanic"
                   fill
                   sizes="(max-width: 1024px) 100vw, 450px"
-                  className="object-contain"
+                  className="object-cover"
                   referrerPolicy="no-referrer"
                 />
               </div>
