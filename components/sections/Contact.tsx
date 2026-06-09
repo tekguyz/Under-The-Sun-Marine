@@ -5,8 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
-import { Phone, CheckCircle2, AlertCircle, ShieldCheck } from 'lucide-react';
-import { submitContactForm } from '@/actions/contact';
+import { Phone, CheckCircle2, AlertCircle } from 'lucide-react';
 
 function formatPhoneNumber(value: string): string {
   if (!value) return value;
@@ -63,6 +62,7 @@ export default function Contact() {
   const onSubmit = (data: ContactFormValues) => {
     startTransition(async () => {
       const formData = new FormData();
+      formData.append('form-name', 'contact');
       formData.append('name', data.name);
       formData.append('phone', data.phone);
       formData.append('serviceNeed', data.serviceNeed);
@@ -70,18 +70,25 @@ export default function Contact() {
       formData.append('message', data.message);
 
       try {
-        const result = await submitContactForm(null, formData);
-        if (result.success) {
+        const response = await fetch('/_forms.html', {
+          method: 'POST',
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+          },
+          body: formData,
+        });
+
+        if (response.ok) {
           setSubmitResult({ 
             success: true, 
-            message: `Thanks ${data.name}! I received your request for ${data.serviceNeed} on your ${data.boatModel}. I'm reviewing the details now and will text or call you at ${data.phone} shortly to coordinate a visit to your dock.` 
+            message: `Thanks ${data.name}! I've received your request. I will review your ${data.boatModel} specs and call or text you at ${data.phone} soon so we can inspect your boat.` 
           });
           reset();
         } else {
-          setSubmitResult({ success: false, message: result.error || 'Something went wrong. Please try again.' });
+          setSubmitResult({ success: false, message: 'Could not send request. Please check your connection or call me instead.' });
         }
       } catch (err) {
-        setSubmitResult({ success: false, message: 'Could not connect to the server. Please check your network or call me instead.' });
+        setSubmitResult({ success: false, message: 'Could not connect. Please check your network or call me instead.' });
       }
     });
   };

@@ -16,9 +16,10 @@ export default function About() {
             <div className="bg-surface-blue rounded-3xl aspect-square w-full max-w-md flex items-center justify-center border-4 border-white shadow-lg p-10 relative overflow-hidden">
               <div className="relative w-full h-full">
                 <Image
-                  src="/logo.png"
+                  src="/logo-trans.png"
                   alt="Under The Sun Marine Logo Seal"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 450px"
                   className="object-contain"
                   referrerPolicy="no-referrer"
                 />

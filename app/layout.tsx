@@ -21,12 +21,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Under The Sun Marine | Mobile Boat Mechanic South Florida',
-  description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics across South Florida. No yard delays—we come straight to your dock.',
+  metadataBase: new URL('https://underthesunmarine.com'),
+  title: 'Under The Sun Marine | Mobile Boat Repair & Services South Florida',
+  description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics from Palm Beach to Miami. No boatyard backlogs—we bring the work direct to your slip.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'Under The Sun Marine | Mobile Boat Mechanic South Florida',
+    title: 'Under The Sun Marine | Mobile Boat Repair & Services South Florida',
     description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics across South Florida.',
-    url: 'https://underthesunmarine.vercel.app/',
+    url: 'https://underthesunmarine.com/',
     siteName: 'Under The Sun Marine',
     images: [
       {
@@ -41,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Under The Sun Marine | Mobile Boat Mechanic South Florida',
+    title: 'Under The Sun Marine | Mobile Boat Repair & Services South Florida',
     description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics across South Florida.',
     images: ['/logo.png'],
   },
@@ -59,7 +63,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Under The Sun Marine",
-    "image": "https://underthesunmarine.vercel.app/logo.png",
+    "image": "https://underthesunmarine.com/logo.png",
     "telephone": "+1-561-560-5050",
     "email": "Utsboatrepair@gmail.com",
     "address": {
