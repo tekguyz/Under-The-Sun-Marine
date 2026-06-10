@@ -50,7 +50,6 @@ export default async function Image() {
           style={{
             position: 'absolute',
             top: '20px',
-            strict: '20px',
             bottom: '20px',
             left: '20px',
             right: '20px',
