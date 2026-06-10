@@ -22,39 +22,23 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://underthesunmarine.com'),
-  title: 'Under The Sun Marine | Mobile Boat Repair & Services South Florida',
-  description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics from Palm Beach to Miami. No boatyard backlogs—we bring the work direct to your slip.',
+  title: 'Under The Sun Marine | Dockside Boat Service & Maintenance',
+  description: 'Professional dockside boat service, routine maintenance, and detailing by Jack in South Florida.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Under The Sun Marine | Mobile Boat Repair & Services South Florida',
-    description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics across South Florida.',
-    url: 'https://underthesunmarine.com/',
+    title: 'Under The Sun Marine | Dockside Boat Service & Maintenance',
+    description: 'Professional dockside boat service, routine maintenance, and detailing by Jack in South Florida.',
+    url: 'https://underthesunmarine.com',
     siteName: 'Under The Sun Marine',
-    images: [
-      {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'Under The Sun Marine Logo',
-      }
-    ],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Under The Sun Marine | Mobile Boat Repair & Services South Florida',
-    description: 'Under The Sun Marine provides reliable, professional dockside mobile boat repair, routine servicing, and marine electronics across South Florida.',
-    images: ['/logo.png'],
-  },
-  icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/logo.png', type: 'image/png', sizes: '32x32' }
-    ],
-    apple: '/logo.png',
+    title: 'Under The Sun Marine | Dockside Boat Service & Maintenance',
+    description: 'Professional dockside boat service, routine maintenance, and detailing by Jack in South Florida.',
   },
 };
 
