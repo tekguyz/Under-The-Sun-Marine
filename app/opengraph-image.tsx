@@ -13,13 +13,11 @@ export const contentType = 'image/png';
 export default async function Image() {
   let logoDataUri = '';
   try {
-    // Try to read the transparent logo first
     const filePath = path.join(process.cwd(), 'public/logo-trans.png');
     const imageBuffer = fs.readFileSync(filePath);
     logoDataUri = `data:image/png;base64,${imageBuffer.toString('base64')}`;
   } catch (e) {
     try {
-      // Fallback to regular logo
       const filePath = path.join(process.cwd(), 'public/logo.png');
       const imageBuffer = fs.readFileSync(filePath);
       logoDataUri = `data:image/png;base64,${imageBuffer.toString('base64')}`;
@@ -28,9 +26,6 @@ export default async function Image() {
     }
   }
 
-  // Create a stunning premium design for the social card:
-  // Clean, white-to-light-blue gradient background, a nice solid navy border frame,
-  // highlighted branding message, and our centered logo styled prominent and tight.
   return new ImageResponse(
     (
       <div
@@ -43,33 +38,50 @@ export default async function Image() {
           justifyContent: 'center',
           backgroundColor: '#ffffff',
           backgroundImage: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 15%, #f8fafc 50%, #f1f5f9 100%)',
-          padding: '40px',
+          padding: '60px',
           position: 'relative',
-          border: '14px solid #0A1B3F',
         }}
       >
-        {/* Abstract wave/sea-accent circles in corners */}
+        {/* FIX: Inset Border Frame. 
+          By pulling the dark border inward by 20px and rounding the corners,
+          it will never clash with dark theme app containers or leave white corner gaps.
+        */}
         <div
           style={{
             position: 'absolute',
-            top: '-150px',
-            right: '-150px',
+            top: '20px',
+            strict: '20px',
+            bottom: '20px',
+            left: '20px',
+            right: '20px',
+            border: '12px solid #0A1B3F',
+            borderRadius: '24px',
+            pointerEvents: 'none',
+          }}
+        />
+
+        {/* Abstract wave/sea-accent circles safely contained inside the frame */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '-130px',
+            right: '-130px',
             width: '400px',
             height: '400px',
             borderRadius: '50%',
-            backgroundImage: 'radial-gradient(circle, rgba(10, 27, 63, 0.05) 0%, transparent 70%)',
+            backgroundImage: 'radial-gradient(circle, rgba(10, 27, 63, 0.04) 0%, transparent 70%)',
             display: 'flex',
           }}
         />
         <div
           style={{
             position: 'absolute',
-            bottom: '-100px',
-            left: '-100px',
+            bottom: '-80px',
+            left: '-80px',
             width: '400px',
             height: '400px',
             borderRadius: '50%',
-            backgroundImage: 'radial-gradient(circle, rgba(242, 106, 33, 0.06) 0%, transparent 70%)',
+            backgroundImage: 'radial-gradient(circle, rgba(242, 106, 33, 0.05) 0%, transparent 70%)',
             display: 'flex',
           }}
         />
@@ -78,12 +90,13 @@ export default async function Image() {
         <span
           style={{
             fontFamily: 'sans-serif',
-            fontSize: '15px',
+            fontSize: '14px',
             fontWeight: 'bold',
             color: '#F26A21',
             textTransform: 'uppercase',
             letterSpacing: '3px',
-            marginBottom: '10px',
+            marginBottom: '12px',
+            zIndex: 10,
           }}
         >
           DOCKSIDE BOAT SERVICE &amp; MAINTENANCE
@@ -95,9 +108,10 @@ export default async function Image() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            height: '340px',
+            height: '300px',
             width: '100%',
-            marginBottom: '10px',
+            marginBottom: '15px',
+            zIndex: 10,
           }}
         >
           {logoDataUri ? (
@@ -105,8 +119,8 @@ export default async function Image() {
               src={logoDataUri}
               alt="Under The Sun Marine"
               style={{
-                maxHeight: '330px',
-                maxWidth: '750px',
+                maxHeight: '290px',
+                maxWidth: '700px',
                 objectFit: 'contain',
               }}
             />
@@ -124,13 +138,14 @@ export default async function Image() {
           )}
         </div>
 
-        {/* Bottom textual description to accompany social visual */}
+        {/* Bottom textual description */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
+            zIndex: 10,
           }}
         >
           <div
@@ -151,7 +166,7 @@ export default async function Image() {
               fontWeight: '500',
               color: '#475569',
               fontFamily: 'sans-serif',
-              marginTop: '5px',
+              marginTop: '6px',
               textAlign: 'center',
             }}
           >
